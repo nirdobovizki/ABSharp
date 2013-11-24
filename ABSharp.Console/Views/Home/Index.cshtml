@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@foreach (var test in ViewBag.OpenAndRecent)
+{
+    <h2>@test.Id</h2>
+    
+    <p>Started: @test.First, Last Visit: @test.Last, Total run-time: @((test.Last - test.First).TotalDays.ToString("0.0")) days</p>
+    
+        <p>Improvement: @test.Improvment.ToString("p"), Confidance: @test.Confidence.ToString("p")</p>
+        <table>
+        <tr>
+        <td></td>
+        <td>Option</td>
+        <td>Enterances</td>
+        <td>Convertions</td>
+        <td colspan="3">Convertion Rate</td>
+        </tr>
+        @foreach (var opt in test.Options)
+        {
+            <tr>
+            <td>@opt.Key</td>
+            <td>@(opt.Key == 0 ? "Origianl (else)" : "Alterntive (if)")</td>
+            <td>@opt.Value.TotalCount</td>
+            <td>@opt.Value.ConvetCount</td>
+            <td style="text-align:right">@opt.Value.ConvertionRate.ToString("p")</td>
+            <td>&plusmn; @opt.Value.Error95.ToString("p")</td>
+            <td style="width:450px">
+            <div style="position:relative;height:20px;width:100%;border-left:2px solid darkgray;border-right:2px solid darkgray;">
+            <div style="position:absolute;height:20%;top:40%;width:100%;background:darkgray;"></div>
+            @{
+                {
+                    var s = Math.Max(opt.Value.ConvertionRate - opt.Value.Error99, 0);
+                    var e = Math.Min(opt.Value.ConvertionRate + opt.Value.Error99, 1);
+                    var w = e - s;
+                    <div style="position:absolute;height:80%;top:9%;left:@s.ToString("p");width:@w.ToString("p");background:white;border:1px solid black;"></div>
+                }
+            }
+            @{
+                {
+                    var s = Math.Max(opt.Value.ConvertionRate - opt.Value.Error95, 0);
+                    var e = Math.Min(opt.Value.ConvertionRate + opt.Value.Error95, 1);
+                    var w = e - s;
+                    <div style="position:absolute;height:80%;top:9%;left:@s.ToString("p");width:@w.ToString("p");background:white;border:1px solid black;"></div>
+                }
+            }
+            <div style="position:absolute;height:100%;top:0;left:@opt.Value.ConvertionRate.ToString("p");background:black;width:2px;margin-left:-1px;"></div>
+            </div>
+            </td>
+            </tr>
+        }
+        </table>
+    
+}

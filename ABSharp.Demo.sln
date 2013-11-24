@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABSharp.Demo", "ABSharp.Demo\ABSharp.Demo.csproj", "{A305F317-4ABA-497B-B657-CF85B28D801A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A305F317-4ABA-497B-B657-CF85B28D801A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A305F317-4ABA-497B-B657-CF85B28D801A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A305F317-4ABA-497B-B657-CF85B28D801A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A305F317-4ABA-497B-B657-CF85B28D801A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

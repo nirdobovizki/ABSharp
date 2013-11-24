@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    @if (ABSharp.Test.Begin("Please vs. Pretty please", "/Home/Convert"))
+    {
+        <a href="/Home/Convert">Please click here</a>
+    }
+    else
+    {
+        <a href="/Home/Convert">Pretty please click here</a>
+    }
+</p>
+
+@(new HtmlString(ABSharp.Test.EmitJS()))
