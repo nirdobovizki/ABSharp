@@ -1,7 +1,7 @@
 AB# - A super simple A/B Testing system for ASP.net
 =======
 
-This is the initial release, the system does work pretty well but the documentaion is quite poor, sorry
+This project is no longer actively maintained, use at your own risk. The system does work pretty well but the documentaion is quite poor, sorry
 
 Usage
 ----
